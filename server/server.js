@@ -14,7 +14,7 @@ const server = new ApolloServer({
   context: authMiddleware
 });
 
-server.applyMiddleware({ app });
+// server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,6 +38,6 @@ const startApolloServer = async () => {
   };
   
 // Call the async function to start the server
-  startApolloServer();
+  startApolloServer(typeDefs, resolvers);
   //Deploying to Heroku
  
